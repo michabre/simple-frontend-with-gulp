@@ -4,6 +4,9 @@
   "author": "Michael C. Breuer",
   "license": "SEE LICENSE IN license.txt",
   "private": true,
+  "dependencies": {
+    "minimist": ">=0.2.1"
+  },
   "devDependencies": {
     "autoprefixer": "^9.5.*",
     "cssnano": "^4.1.*",
@@ -12,7 +15,7 @@
     "gulp-plumber": "^1.2.*",
     "gulp-postcss": "^8.*",
     "gulp-rename": "^1.4.*",
-    "gulp-sass": "^4.*",
-    "node-sass": "^4.12.0"
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1"
   }
 }
