@@ -16,6 +16,7 @@
     "gulp-postcss": "^8.*",
     "gulp-rename": "^1.4.*",
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.13.1",
+    "yargs-parser": ">=13.1.2"
   }
 }
