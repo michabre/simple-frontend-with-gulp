@@ -1,1 +1,5 @@
-function addition(n,o){return+n+ +o}console.log(addition(5,7));
+function addition(a, b) {
+  return +a + +b;
+}
+
+console.log(addition(5, 7));

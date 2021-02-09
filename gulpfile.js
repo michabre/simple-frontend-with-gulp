@@ -37,6 +37,7 @@ function styles() {
 function scripts() {
   return src(dir.js)
     .pipe(concat("scripts.js"))
+    .pipe(dest(dir.scripts))
     .pipe(
       minify({
         ext: {
@@ -45,6 +46,7 @@ function scripts() {
       })
     )
     .pipe(uglify())
+    .pipe(rename({ suffix: ".min" }))
     .pipe(dest(dir.scripts));
 }
 

@@ -1,0 +1,1 @@
+function addition(n,o){return+n+ +o}console.log(addition(5,7));
