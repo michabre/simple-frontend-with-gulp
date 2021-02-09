@@ -1,40 +1,54 @@
 "use strict";
 
-const { src, dest, parallel, watch } = require('gulp');
+const { src, dest, parallel, watch } = require("gulp");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const sass = require("gulp-sass");
-sass.compiler = require('node-sass');
+sass.compiler = require("node-sass");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
-const concat = require('gulp-concat');
+const concat = require("gulp-concat");
+const minify = require("gulp-minify");
+const uglify = require("gulp-uglify");
 
 // directories
-const dir = { 
-  "scss": "scss/*.scss",
-  "css": "css/"
+const dir = {
+  scss: ["src/scss/*.scss"],
+  js: ["src/js/dependencies/*.js", "src/js/*.js"],
+  styles: "css/",
+  scripts: "js/",
 };
 
-// CSS task
-function css() {
-  return src([dir.scss])
+// Stylesheets task
+function styles() {
+  return src(dir.scss)
     .pipe(plumber())
     .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(concat('styles.css'))
+    .pipe(concat("styles.css"))
     .on("error", sass.logError)
-    .pipe(dest(dir.css))
+    .pipe(dest(dir.styles))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(dest(dir.css));
+    .pipe(dest(dir.styles));
 }
 
-// watch for changes in sass files
-function sassTocss() {
-  watch(dir.scss, css);
+// JS task
+function scripts() {
+  return src(dir.js)
+    .pipe(concat("scripts.js"))
+    .pipe(
+      minify({
+        ext: {
+          min: ".js",
+        },
+      })
+    )
+    .pipe(uglify())
+    .pipe(dest(dir.scripts));
 }
 
 // exports
-exports.css = css;
-exports.default = parallel(css);
-exports.watch = sassTocss;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.default = parallel(styles, scripts);
