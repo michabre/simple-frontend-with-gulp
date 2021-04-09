@@ -10,6 +10,8 @@ A simple implementation of Gulp 4 used to convert:
 
 I created this as a starting point for implementing Gulp into a project. This was originally setup for Gulp 3, so I had to learn how to convert to 4.
 
+This could easily be added into a WordPress, Drupal, MODx or Shopify project.
+
 ## Installation
 
 From the command line, in the root of the directory, run:
@@ -39,6 +41,8 @@ gulp -version
 
 > If the CLI version is < 4, you will have to use the node command to use the Gulp version stored in node_modules. The version of node installed should be >= 8
 
+### Styles
+
 Convert files in the src/scss directory into single CSS files (styles.css, styles.min.css) and move to the css directory.
 
 ```bash
@@ -49,6 +53,8 @@ gulp styles
 node ./node_modules/gulp/bin/gulp.js styles
 ```
 
+### Scripts
+
 Convert files in the src/js directory into single JS files (scripts.js, scripts.min.js) and move to the js directory.
 
 ```bash
@@ -58,6 +64,8 @@ gulp scripts
 ```bash
 node ./node_modules/gulp/bin/gulp.js scripts
 ```
+
+### Watch
 
 Watch changes in the src/scss and src/js directory and trigger the **styles** and **scripts** Gulp functions. Once you click save, the files will be compiled.
 
