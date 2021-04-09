@@ -1,6 +1,12 @@
 # Convert SCSS to CSS with Gulp 4
 
-A simple implementation of Gulp 4 used to convert SCSS files into a single CSS file.
+A simple implementation of Gulp 4 used to convert:
+
+- SCSS files into a single CSS file along with a minified version
+  **styles.css** and **styles.min.css**
+
+- JS files into a single JS file along with a minified version
+  **scripts.js** and **scripts.min.js**
 
 I created this as a starting point for implementing Gulp into a project. This was originally setup for Gulp 3, so I had to learn how to convert to 4.
 
@@ -16,7 +22,8 @@ This will install all project dependencies and create a node_modules folder.
 
 !!! DO NOT COMMIT YOUR node_modules FOLDER !!!
 
-**.gitignore**
+### .gitignore
+
 ```bash
 # Dependency directories
 node_modules/
@@ -32,17 +39,27 @@ gulp -version
 
 > If the CLI version is < 4, you will have to use the node command to use the Gulp version stored in node_modules. The version of node installed should be >= 8
 
-Convert files in scss directory into single css files (styles.css, styles.min.css) and move to the css directory
+Convert files in the src/scss directory into single CSS files (styles.css, styles.min.css) and move to the css directory.
 
 ```bash
-gulp
+gulp styles
 ```
 
 ```bash
-node ./node_modules/gulp/bin/gulp.js
+node ./node_modules/gulp/bin/gulp.js styles
 ```
 
-Watch changes in the scss directory and trigger 'css' Gulp function
+Convert files in the src/js directory into single JS files (scripts.js, scripts.min.js) and move to the js directory.
+
+```bash
+gulp scripts
+```
+
+```bash
+node ./node_modules/gulp/bin/gulp.js scripts
+```
+
+Watch changes in the src/scss and src/js directory and trigger the **styles** and **scripts** Gulp functions. Once you click save, the files will be compiled.
 
 ```bash
 gulp watch
@@ -58,13 +75,12 @@ Please report any issues you find with this code.
 
 ## Built With
 
-* [NodeJS](https://nodejs.org/)
-* [GulpJS](https://gulpjs.com/)
+- [NodeJS](https://nodejs.org/)
+- [GulpJS](https://gulpjs.com/)
 
 ## Authors
 
-* **Michael C. Breuer** - *Initial work* - [michabre](https://github.com/michabre)
-
+- **Michael C. Breuer** - _Initial work_ - [michabre](https://github.com/michabre)
 
 ## License
 
@@ -72,5 +88,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* [How to Migrate to Gulp.js 4.0](https://www.sitepoint.com/how-to-migrate-to-gulp-4/)
-* [GulpJS Documentation](https://gulpjs.com/docs/en/getting-started/quick-start)
+- [How to Migrate to Gulp.js 4.0](https://www.sitepoint.com/how-to-migrate-to-gulp-4/)
+- [GulpJS Documentation](https://gulpjs.com/docs/en/getting-started/quick-start)
+- [jeromecoupe/webstoemp-gulpfile.js](https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a)

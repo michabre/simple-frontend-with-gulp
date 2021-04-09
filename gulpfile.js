@@ -50,7 +50,13 @@ function scripts() {
     .pipe(dest(dir.scripts));
 }
 
+function watchFiles() {
+  watch(dir.scss, styles);
+  watch(dir.js, scripts);
+}
+
 // exports
+exports.watch = parallel(watchFiles);
 exports.styles = styles;
 exports.scripts = scripts;
 exports.default = parallel(styles, scripts);
