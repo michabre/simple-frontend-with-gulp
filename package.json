@@ -1,9 +1,11 @@
 {
   "version": "2.0.0",
-  "description": "Using Gulp to convert SCSS files to CSS",
+  "description": "Using Gulp to build a simple frontend",
   "author": "michabre",
   "license": "MIT",
-  "dependencies": {},
+  "scripts": {
+    "start": "lite-server"
+  },
   "devDependencies": {
     "autoprefixer": "^9.5.*",
     "cssnano": "^4.1.*",
@@ -19,10 +21,11 @@
     "gulp-uglify": "^3.0.2",
     "ini": ">=1.3.6",
     "is-svg": ">=4.2.2",
+    "lite-server": "^2.6.1",
     "lodash": ">=4.17.21",
     "minimist": ">=0.2.1",
-    "node-sass": "^6.0.1",
     "path-parse": ">=1.0.7",
+    "sass": "^1.41.1",
     "set-value": ">=4.0.1",
     "tar": ">=4.4.18",
     "trim-newlines": ">=3.0.1",

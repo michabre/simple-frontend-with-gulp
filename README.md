@@ -1,6 +1,6 @@
-# Convert SCSS to CSS with Gulp 4
+# Build a Simple Frontend with Gulp
 
-A simple implementation of Gulp 4 used to convert:
+A simple implementation of Gulp used to convert:
 
 - SCSS files into a single CSS file along with a minified version
   **styles.css** and **styles.min.css**
@@ -19,10 +19,6 @@ From the command line, in the root of the directory, run:
 ```bash
 npm install
 ```
-
-This will install all project dependencies and create a node_modules folder.
-
-!!! DO NOT COMMIT YOUR node_modules FOLDER !!!
 
 ### .gitignore
 
