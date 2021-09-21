@@ -20,14 +20,12 @@ From the command line, in the root of the directory, run:
 npm install
 ```
 
-### .gitignore
+## Commands
 
 ```bash
-# Dependency directories
-node_modules/
+# start lite-server (if required)
+npm run start
 ```
-
-## Commands
 
 I've listed to commands to use if you have Gulp 3 or Gulp 4 installed. On the command line, type:
 
