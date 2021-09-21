@@ -2,41 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Default Title</title>
+    <title>Gulp HTML Page</title>
     <meta
       name="description"
-      content="The default description for a testing page."
+      content="A simple frontend using Gulp to process styles and scripts."
     />
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./js/scripts.js" defer></script>
   </head>
   <body>
-    <article>
-      <header>
-        <h1>Hello World</h1>
-      </header>
+    <section id="main">
+      <div class="container">
+        <div class="columns"> 
+          <div class="column is-half left">
+            <div>
+              <h1 class="title is-1">Gulp HTML Page</h1>
+              <h2 class="subtitle colored is-4">
+                A simple frontend using Gulp to process styles and scripts.
+              </h2>
+              <p>
+                The <b>gulpfile.js</b> contains processes for combining and minifying scss and js files. Also adds Bulma for styling this html page.
+              </p>
+            </div>
+          </div>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac tortor
-        lacinia, scelerisque mauris a, dapibus nunc. Suspendisse accumsan
-        elementum magna, non sollicitudin massa mollis at. Aliquam iaculis
-        auctor dui. Nam pharetra purus vitae nibh molestie, eget dictum diam
-        volutpat.
-      </p>
+          <div class="column is-half right has-text-centered dark">
+            <div>
+              <h2 class="title is-3">JavaScript Example</h2>
+              <h3 class="subtitle">A simple calculator for demonstration purposes.</h3>
+              <form>
+                <div class="field is-horizontal">
 
-      <blockquote>
-        Duis finibus ante eu metus semper, iaculis fermentum nisl porta.
-      </blockquote>
+                  <div class="field-body">
+                    <div class="field">
+                      <p class="control is-expanded">
+                        <input id="var_x" class="input" type="text" placeholder="VAR X">
+      
+                      </p>
+                    </div>
+                    <div class="field">
+                      <div class="select is-primary">
+                        <select id="selectedOperation">
+                          <option value="add">add</option>
+                          <option value="subtract">subract</option>
+                          <option value="divide">divide</option>
+                          <option value="multiply">multiply</option>
+                        </select>
+                      </div>
+                    </div>
+  
+                    <div class="field">
+                      <p class="control is-expanded">
+                        <input id="var_y" class="input is-success" type="text" placeholder="VAR Y" value="">
+                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <button
+                id="compute"
+                  class="button is-block is-primary is-fullwidth is-medium" 
+                >
+                  Compute
+                </button>
+              </form>
 
-      <p>
-        Curabitur id varius elit. Fusce ut tellus a sapien cursus egestas
-        laoreet ut augue. Pellentesque accumsan vel metus vitae feugiat. Quisque
-        efficitur ex ut mi eleifend tristique. Nullam interdum at leo at
-        fringilla. Etiam condimentum imperdiet magna, sit amet aliquam justo
-        laoreet eu. Cras nec neque at est egestas ullamcorper.
-      </p>
-
-      <footer>Tags: latin, greetings, testing</footer>
-    </article>
+              <div id="message" class="pt-4">
+                <p><span class="has-text-weight-bold">Answer</span> <span id="answer" class="tag is-info is-large">0</span></p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

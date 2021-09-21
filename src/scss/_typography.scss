@@ -1,0 +1,16 @@
+body {
+  color: $white;
+}
+
+.title,
+.subtitle {
+  color: $white;
+}
+
+.dark {
+  .title,
+  .subtitle,
+  p {
+    color: $darkGrey;
+  }
+}

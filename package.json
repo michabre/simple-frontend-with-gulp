@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.5.*",
+    "bulma": "^0.9.3",
     "cssnano": "^4.1.*",
     "dot-prop": ">=5.1.1",
     "glob-parent": ">=5.1.2",
