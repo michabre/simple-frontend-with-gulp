@@ -20,11 +20,18 @@ From the command line, in the root of the directory, run:
 npm install
 ```
 
-## Commands
+## Docker Commands
 
 ```bash
-# start lite-server (if required)
-npm run start
+# 
+# build
+docker build -t simple-frontend-with-gulp .
+
+# run site at http://localhost:3001/
+docker run -d -p 3001:80 simple-frontend-with-gulp
+
+# enter Bash shell on Windows
+winpty docker exec -it <container id> bash
 ```
 
 I've listed to commands to use if you have Gulp 3 or Gulp 4 installed. On the command line, type:
