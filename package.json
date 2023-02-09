@@ -3,9 +3,6 @@
   "description": "Using Gulp to build a simple frontend",
   "author": "michabre",
   "license": "MIT",
-  "scripts": {
-    "start": "lite-server"
-  },
   "devDependencies": {
     "autoprefixer": "^9.5.*",
     "bulma": "^0.9.3",

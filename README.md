@@ -31,9 +31,6 @@ docker run -d -p 3001:80 simple-frontend-with-gulp
 
 # enter Bash shell
 docker exec -it <container id> bash
-
-# enter Bash shell on Windows
-docker exec -it <container id> bash
 ```
 
 I've listed to commands to use if you have Gulp 3 or Gulp 4 installed. On the command line, type:
