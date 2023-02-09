@@ -23,7 +23,6 @@ npm install
 ## Docker Commands
 
 ```bash
-# 
 # build
 docker build -t simple-frontend-with-gulp .
 
@@ -31,6 +30,9 @@ docker build -t simple-frontend-with-gulp .
 docker run -d -p 3001:80 simple-frontend-with-gulp
 
 # enter Bash shell
+docker exec -it <container id> bash
+
+# enter Bash shell on Windows
 docker exec -it <container id> bash
 ```
 
