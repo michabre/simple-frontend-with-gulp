@@ -1,11 +1,7 @@
 "use strict";
 
 const { src, dest, parallel, watch } = require("gulp");
-const autoprefixer = require("autoprefixer");
-const cssnano = require("cssnano");
-const sass = require("gulp-sass")(require("sass"));
 const plumber = require("gulp-plumber");
-const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const concat = require("gulp-concat");
 const minify = require("gulp-minify");
@@ -13,22 +9,19 @@ const uglify = require("gulp-uglify");
 
 // directories
 const dir = {
-  scss: ["src/scss/*.scss"],
-  js: ["src/js/dependencies/*.js", "src/js/*.js"],
+  css: ["src/styles/*.css"],
+  js: ["src/scripts/dependencies/*.js", "src/scripts/*.js"],
   styles: "css/",
   scripts: "js/",
 };
 
 // Stylesheets task
 function styles() {
-  return src(dir.scss)
+  return src(dir.css)
     .pipe(plumber())
-    .pipe(sass({ outputStyle: "expanded" }))
     .pipe(concat("styles.css"))
-    .on("error", sass.logError)
     .pipe(dest(dir.styles))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(dest(dir.styles));
 }
 
@@ -50,7 +43,7 @@ function scripts() {
 }
 
 function watchFiles() {
-  watch(dir.scss, styles);
+  watch(dir.css, styles);
   watch(dir.js, scripts);
 }
 
