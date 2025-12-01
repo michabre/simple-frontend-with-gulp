@@ -1,7 +1,9 @@
-@import "../../node_modules/bulma/bulma";
-@import "variables";
-@import "layout";
-@import "typography";
+:root {
+  /* Colours */
+  --black: #000000;
+  --grey: #272b3c;
+  --white: #e2e5ec;
+}
 
 html,
 body {
@@ -17,24 +19,21 @@ body {
     &.is-half {
       &.right {
         padding: 2rem;
-        background: $white;
-      }
-      &.right {
-        -moz-box-shadow: inset 0 0 10px $black;
-        -webkit-box-shadow: inset 0 0 10px $black;
-        box-shadow: inset 0 0 10px $black;
+        background: var(--white);
+        -moz-box-shadow: inset 0 0 10px var(--black);
+        -webkit-box-shadow: inset 0 0 10px var(--black);
+        box-shadow: inset 0 0 10px var(--black);
       }
     }
   }
 }
-
 body {
-  color: $white;
+  color: var(--white);
 }
 
 .title,
 .subtitle {
-  color: $white;
+  color: var(--white);
 }
 
 .dark {
@@ -47,11 +46,6 @@ body {
   h5,
   h6,
   p {
-    color: $darkGrey;
+    color: var(--grey);
   }
 }
-
-// Colours
-$black: #000000;
-$darkGrey: #272b3c;
-$white: #e2e5ec;

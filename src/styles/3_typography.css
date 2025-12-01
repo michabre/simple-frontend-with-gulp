@@ -1,10 +1,10 @@
 body {
-  color: $white;
+  color: var(--white);
 }
 
 .title,
 .subtitle {
-  color: $white;
+  color: var(--white);
 }
 
 .dark {
@@ -17,6 +17,6 @@ body {
   h5,
   h6,
   p {
-    color: $darkGrey;
+    color: var(--grey);
   }
 }
