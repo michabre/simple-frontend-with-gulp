@@ -4,6 +4,7 @@ const { src, dest, parallel, watch } = require("gulp");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const concat = require("gulp-concat");
+const cssnano = require("gulp-cssnano");
 const minify = require("gulp-minify");
 const uglify = require("gulp-uglify");
 
@@ -21,7 +22,8 @@ function styles() {
     .pipe(plumber())
     .pipe(concat("styles.css"))
     .pipe(dest(dir.styles))
-    .pipe(rename({ suffix: ".min" }))
+    .pipe(cssnano())
+    .pipe(rename("styles.min.css"))
     .pipe(dest(dir.styles));
 }
 
